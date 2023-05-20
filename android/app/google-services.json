@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "943326578058",
+    "project_id": "obichat-81eb1",
+    "storage_bucket": "obichat-81eb1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:943326578058:android:83d443cd07cd5d0f86b473",
+        "android_client_info": {
+          "package_name": "com.example.obichat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "943326578058-3h8k4j0mddefdfitpldllb2tf4jjkopt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCaTJaMvbvah69iBE4vvmFkYTyNldLJ7g8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "943326578058-3h8k4j0mddefdfitpldllb2tf4jjkopt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
