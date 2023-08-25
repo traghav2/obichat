@@ -39,9 +39,9 @@ class MyApp extends StatelessWidget {
             if (state is AuthLoggedInState) {
               return HomeScreen();
             } else if (state is AuthLoggedOutState) {
-                return const WelcomeScreen();
+                return HomeScreen();
             }else{
-              return const SplashScreen();
+              return HomeScreen();
             }
           },
         ),

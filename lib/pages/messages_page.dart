@@ -1,5 +1,5 @@
 import 'package:obichat/helpers.dart';
-import 'package:obichat/models/message_data.dart';
+import 'package:obichat/models/message_model.dart';
 import 'package:obichat/models/story_data.dart';
 import 'package:obichat/screens/chat_screen.dart';
 import 'package:obichat/theme.dart';
@@ -30,10 +30,9 @@ Widget _delegate(BuildContext context, int index) {
   final date = Helpers.randomDate();
   final timeAgo = timeago.format(date, locale: 'en_long');
   return _MessageTile(
-      messageData: MessageData(
+      messageData: MessageModel(
     senderName: faker.person.name(),
     message: faker.lorem.sentence(),
-    messageDate: date,
     dateMessage: timeAgo,
     profilePicture: Helpers.randomPictureUrl(),
   ));
@@ -42,13 +41,13 @@ Widget _delegate(BuildContext context, int index) {
 class _MessageTile extends StatelessWidget {
   const _MessageTile({Key? key, required this.messageData}) : super(key: key);
 
-  final MessageData messageData;
+  final MessageModel messageData;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: 200,
-      height: 80,
+      height: 90,
       child: InkWell(
         onTap: () {
           Navigator.of(context).push(ChatScreen.route(messageData));
@@ -72,7 +71,7 @@ class _MessageTile extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(bottom: 12.0),
                     child: Text(
-                      messageData.senderName,
+                      messageData.senderName!,
                       style: const TextStyle(
                           color: Colors.white,
                           fontSize: 15,
@@ -84,7 +83,7 @@ class _MessageTile extends StatelessWidget {
                   SizedBox(
                       height: 30,
                       child: Text(
-                        messageData.message,
+                        messageData.message!,
                         style: TextStyle(
                             color: Colors.grey.shade300, overflow: TextOverflow.ellipsis, fontSize: 12),
                       )),
@@ -100,7 +99,7 @@ class _MessageTile extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(bottom: 13.0),
-                    child: Text(messageData.dateMessage.toUpperCase(), style: TextStyle(color: Colors.grey.shade300, fontSize: 10, fontWeight: FontWeight.bold),),
+                    child: Text(messageData.dateMessage!.toUpperCase(), style: TextStyle(color: Colors.grey.shade300, fontSize: 10, fontWeight: FontWeight.bold),),
                   ),
                   Container(
                     decoration: BoxDecoration(borderRadius: BorderRadius.circular(30), color: Colors.green.shade500,),

@@ -7,7 +7,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ChatScreen extends StatelessWidget {
-  static Route route(MessageData data) => MaterialPageRoute(
+  static Route route(MessageModel data) => MaterialPageRoute(
     builder: (context) => ChatScreen(
       messageData: data,
     ),
@@ -15,7 +15,7 @@ class ChatScreen extends StatelessWidget {
 
   const ChatScreen({Key? key, required this.messageData}) : super(key: key);
 
-  final MessageData messageData;
+  final MessageModel messageData;
 
   @override
   Widget build(BuildContext context) {
@@ -79,7 +79,7 @@ class ChatScreen extends StatelessWidget {
 class _AppBarTitle extends StatelessWidget {
   const _AppBarTitle({Key? key, required  this.messageData}) : super(key: key);
 
-  final MessageData messageData;
+  final MessageModel messageData;
 
   @override
   Widget build(BuildContext context) {
@@ -97,7 +97,7 @@ class _AppBarTitle extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  messageData.senderName,
+                  messageData.senderName!,
                   overflow: TextOverflow.ellipsis,
                   style: const TextStyle(fontSize: 14),
                 ),
